@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resistor Color Code Calculator - shanecore-systems</title>
+  <link rel="stylesheet" href="styles.css">
+  <!-- Import segment display font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Dark overlay -->
+  <div class="overlay"></div>
+
+  <!-- Logo and Title -->
+  <div class="header-container">
+    <div class="logo">
+      <img src="https://assets.onecompiler.app/43af7ep2e/43az3rb2q/IMG-20250305-WA0031.jpg" alt="Shanecore Systems Logo">
+    </div>
+    <div class="title">Shanecore Systems</div>
+  </div>
+
+  <main>
+    <!-- Second Calculator: Value to Color (Now on the left) -->
+    <div class="calculator">
+      <h2>Resistor Value to Color Code</h2>
+      <div class="value-input">
+        <label for="resistor-value-input">Resistor Value:</label>
+        <input type="number" id="resistor-value-input" placeholder="Enter value">
+        <select id="resistor-unit">
+          <option value="Ω">Ω</option>
+          <option value="kΩ">kΩ</option>
+          <option value="MΩ">MΩ</option>
+        </select>
+        <button id="calculate-colors">Calculate Colors</button>
+      </div>
+
+      <div class="resistor-diagram">
+        <div class="resistor-body">
+          <div class="band" id="value-band1"></div>
+          <div class="band" id="value-band2"></div>
+          <div class="band" id="value-band3"></div>
+          <div class="band" id="value-band4"></div>
+        </div>
+      </div>
+
+      <div class="result">
+        <p>Color Code: <span id="color-code-result"></span></p>
+      </div>
+    </div>
+
+    <!-- First Calculator: Color to Value (Now on the right) -->
+    <div class="calculator">
+      <h2>Resistor Color Code Calculator</h2>
+      <div class="band-selector">
+        <label for="band-count">Number of Bands:</label>
+        <select id="band-count">
+          <option value="4">4 Bands</option>
+          <option value="5">5 Bands</option>
+        </select>
+      </div>
+
+      <div class="resistor-diagram">
+        <div class="resistor-body">
+          <div class="band" id="band1"></div>
+          <div class="band" id="band2"></div>
+          <div class="band" id="band3"></div>
+          <div class="band" id="band4"></div>
+          <div class="band" id="band5" style="display: none;"></div>
+        </div>
+      </div>
+
+      <div class="color-selector">
+        <div id="band1-selector">
+          <label for="band1-select">Band 1:</label>
+          <select id="band1-select">
+            <option value="black">Black</option>
+            <option value="brown">Brown</option>
+            <option value="red">Red</option>
+            <option value="orange">Orange</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="violet">Violet</option>
+            <option value="gray">Gray</option>
+            <option value="white">White</option>
+          </select>
+        </div>
+
+        <div id="band2-selector">
+          <label for="band2-select">Band 2:</label>
+          <select id="band2-select">
+            <option value="black">Black</option>
+            <option value="brown">Brown</option>
+            <option value="red">Red</option>
+            <option value="orange">Orange</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="violet">Violet</option>
+            <option value="gray">Gray</option>
+            <option value="white">White</option>
+          </select>
+        </div>
+
+        <div id="band3-selector">
+          <label for="band3-select">Band 3:</label>
+          <select id="band3-select">
+            <option value="black">Black</option>
+            <option value="brown">Brown</option>
+            <option value="red">Red</option>
+            <option value="orange">Orange</option>
+            <option value="yellow">Yellow</option>
+            <option value="green">Green</option>
+            <option value="blue">Blue</option>
+            <option value="violet">Violet</option>
+            <option value="gray">Gray</option>
+            <option value="white">White</option>
+          </select>
+        </div>
+
+        <div id="band4-selector">
+          <label for="band4-select">Band 4 (Multiplier):</label>
+          <select id="band4-select">
+            <option value="black">x1</option>
+            <option value="brown">x10</option>
+            <option value="red">x100</option>
+            <option value="orange">x1k</option>
+            <option value="yellow">x10k</option>
+            <option value="green">x100k</option>
+            <option value="blue">x1M</option>
+            <option value="violet">x10M</option>
+            <option value="gray">x100M</option>
+            <option value="white">x1G</option>
+          </select>
+        </div>
+
+        <div id="band5-selector" style="display: none;">
+          <label for="band5-select">Band 5 (Tolerance):</label>
+          <select id="band5-select">
+            <option value="gold">±5% (Gold)</option>
+            <option value="silver">±10% (Silver)</option>
+            <option value="none">±20% (None)</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="result">
+        <p>Resistor Value: <span id="resistor-value">0 Ω</span></p>
+        <p>Tolerance: <span id="tolerance-value">±20%</span></p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Shanecore_Systems. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
